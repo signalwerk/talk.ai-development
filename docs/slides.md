@@ -87,7 +87,6 @@ background: true
 ## Disclaimer
 
 - I am **not** an _AI/ML expert_
-- I am **not** a _ChatGPT expert_
 - There will be _live coding_ **🧨**
 - We are all having different _backgrounds/knowhow_
 
@@ -97,7 +96,7 @@ background: true
 
 ## Requirements
 
-- Join `#ai-session-may2023`
+- Join `#ai-session-sep2023`
 - Your **participation** is welcome and needed
 - We are all learning – please _make others feel safe_
 
@@ -116,8 +115,8 @@ background: true
 
 ## Access to tools
 
-- _ChatGPT_ → no business Accounts (Gadget-Budget)
-- _Copilot_ → no Liip-Solution right now (Gadget-Budget)
+- _ChatGPT_ Enterprise → no (Gadget-Budget)
+- [_Copilot_ for Business](https://github.com/features/copilot#pricing) → no (Gadget-Budget)
 - _OpenAI-API-Key_ → contact #ai-exchange
 
 <footer>
@@ -135,6 +134,7 @@ Gadget-Budget = [Expense Reimbursement Regulations · 6.1. Incidental expenses](
 - stereotypes
 - gendered names
 - regional names
+- …
 
 <footer>
 
@@ -148,8 +148,15 @@ Source: [OpenAI: Limitations & risks](https://platform.openai.com/docs/guides/em
 
 - ChatGPT/Copilot is **not a search engine**
 - It is _not using «live» data_ from the web
+- No more [URL requests](https://chat.openai.com/share/f33f2ee5-55f0-4582-a24e-137b6f345b84) like [before](https://chat.openai.com/share/de4f1d14-cf3b-4a48-a181-d56e7d355308)
 
 > think of it as: someone had access to the web and learned on all data but is now offline
+
+<footer>
+
+Source: [OpenAI: Web Browsing in ChatGPT is disabled since July 3, 2023](https://help.openai.com/en/articles/8077698-how-do-i-use-chatgpt-browse-with-bing-to-search-the-web)
+
+</footer>
 
 --s--
 
@@ -159,8 +166,10 @@ Source: [OpenAI: Limitations & risks](https://platform.openai.com/docs/guides/em
 
 ---
 
-- We don't know …
-- [AI · Is it ethical to learn?](https://www.liip.ch/en/blog/ai-is-it-ethical-to-learn)
+## Ethical issues
+
+- Distribution of AI in society
+- [Learning Material](https://www.liip.ch/en/blog/ai-is-it-ethical-to-learn)
 
 --s--
 
@@ -170,14 +179,13 @@ Source: [OpenAI: Limitations & risks](https://platform.openai.com/docs/guides/em
 - AI pair programmer
 - _Code_ & _comments_
 - IDE integration
-- Copilot is _not_ a _Chatbot_
-- Copilot X will bring some improvements
+- _«conversation»_ and _«inline suggestions»_
 
 --s--
 
 ## Copilot · Coding
 
-> It writes code for you
+> It writes/suggests code for you
 
 - Think of it as _«machine partner»_
 - You need to **communicate** with it
@@ -186,20 +194,20 @@ Source: [OpenAI: Limitations & risks](https://platform.openai.com/docs/guides/em
 
 ## Copilot · Coding · <small>`VSCode`</small>
 
-- Trigger **Inline Suggestion** <small>`editor.action.inlineSuggest.trigger`</small>
-- Show **Next** Inline Suggestion <small>`editor.action.inlineSuggest.showNext`</small>
-- Show **Previous** Inline Suggestion <small>`editor.action.inlineSuggest.showNext`</small>
-- GitHub Copilot: Open _Completions Panel_ <small>`github.copilot.generate`</small>
+- Trigger **Inline Suggestion** <br><small>`editor.action.inlineSuggest.trigger` (my shortcut `⌃ + ä`)</small>
+- Show **Next** Inline Suggestion <br><small>`editor.action.inlineSuggest.showNext` (my shortcut `⌃ + $`)</small>
+- Show **Previous** Inline Suggestion <br><small>`editor.action.inlineSuggest.showNext` (my shortcut `⌃ + ö`)</small>
+- Open _Completions Panel_ <br><small>`github.copilot.generate` (my shortcut `⌃ + ENTER`)</small>
 
 --s--
 
 ## Copilot · Coding
 
-### Example
+### Example 1
 
-- You have an Array
-- You want to extend it to a given size
-- You want to fill it with a given number
+- You have an Array `[1, 2, 3]`
+- You want to extend it to a given length `5`
+- You want to fill it with a given value `0`
 
 ```js
 fillArray([1, 2, 3], 5, 0);
@@ -210,6 +218,8 @@ fillArray([1, 2, 3], 5, 0);
 
 ## Copilot · lazy/stupid me
 
+### Example 2 & 3
+
 - what exactly was the _name_ again?
 - skip _documentation_…
 - bad with a certain _languages_
@@ -218,9 +228,27 @@ fillArray([1, 2, 3], 5, 0);
 
 ## Copilot · Labs
 
+### Example 4
+
 - _translate_ between languages
 - _«enhance»_ code
 - _comment_ on code
+
+--s--
+
+## Copilot · CLI
+
+### Example
+
+<div class="small">
+
+```sh
+?? "How do I convert with ffmpeg a video to 20fps and 720p?"
+
+?? "Find me all files ending in .jpg in the folder /tmp but not in subfolders"
+```
+
+</div>
 
 --s--
 
@@ -366,6 +394,33 @@ function findDataById(data, id) {
 
 ## Use Cases
 
+<!--
+
+| Table Name | Column Name | Purpose                         |
+| ---------- | ----------- | ------------------------------- |
+| texts      | id          | Unique identifier for each text |
+|            | content     | Text content                    |
+
+-->
+
+| id  | content              |
+| --- | -------------------- |
+| 1   | Initial text content |
+
+---
+
+`update id 1 with content "Hello"`
+
+---
+
+| id  | content |
+| --- | ------- |
+| 1   | Hello   |
+
+--s--
+
+## Use Cases
+
 ### Ask for ideas
 
 > I have a table `texts` with a column `content` and a column `id`. Whenever a user updates a `content` by `id` I would like to have a new version, so I keep the full history. How can I do that?
@@ -404,7 +459,7 @@ function findDataById(data, id) {
 
 - Got to [chat.openai.com](https://chat.openai.com/chat) (do you have an account?)
 - Question: _What is your favorite example/fail of ChatGPT?_
-- Share screenshot in `#ai-session-may2023`
+- Share screenshot in `#ai-session-sep2023`
 
 ---
 
@@ -428,7 +483,7 @@ background: true
 - _OpenAI_ has currently _advanced models_ for text generation
 - _Open Source alternatives_ for large language models
 - Currently we have _LLama-Derivated_ Models as strong Open Source alternatives
-- _LLama_ was computed by _Meta_ but is not open/libre
+- _LLama_ was computed by _Meta_ and is in version 2 freely available
 
 --s--
 
@@ -437,17 +492,86 @@ background: true
 - What _data_ do you send to the provider?
 - OpenAI _learns on ChatGPT_ (opt-out)
 - OpenAI _does not learn on API-Requests_
-- If you use it for a client _Microsoft Azure_ offers _EU hosting_ of OpenAI-Models
+- If you use it for a client _Microsoft Azure_ offers more privacy for OpenAI-Models
+
+<footer>
+
+Source: [OpenAI · Terms of use · 3. Content · (c) Use of Content to Improve Services](https://openai.com/policies/terms-of-use) (Version: March 14, 2023)
+
+</footer>
+
+--s--
+
+## Microsoft Azure
+
+- [Same API](https://azure.microsoft.com/en-us/products/cognitive-services/openai-service/) as OpenAI
+- _Models from OpenAI_ hosted by Microsoft
+- Almost the [same pricing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/) as OpenAI
+- Offers [**EU/Swiss hosting**](https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/?products=cognitive-services&regions=switzerland-north,switzerland-west,europe-north,europe-west) (Netherlands)
+- Many [ISO-Certificates](https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-iso-27001)
 
 --s--
 
 ## OpenAI API Keys and Management
 
-- API-Access needs an _API-Key_ → contact #ai-exchange
-- You _pay_ for Text _per Token_ [pricing](https://openai.com/pricing)
+- API-Access needs an _API-Key_ → contact `#ai-exchange`
 - The [API-Key](https://platform.openai.com/account/api-keys) is bound to _your OpenAI User_
 - _Name_ your API-Keys
 - Be aware of your _organization's_
+
+--s--
+
+## Tokens
+
+- Tokens are the _smallest unit_ of input
+- Tokens are _not words_ but a set of **vocabulary**
+- Each model has a _different tokens_ and _size limits_
+
+<br>
+
+### Example
+
+`GPT-3.5-turbo` can process _4096 tokens_. If you have more than 4096 tokens, you need to split your request into multiple requests.
+
+<footer>
+
+Test: [OpenAI · Tokenizer](https://platform.openai.com/tokenizer)
+
+</footer>
+
+--s--
+
+## Pricing
+
+- You _pay_ for Text _per Token_ (see [pricing](https://openai.com/pricing))
+- Usually **super cheap** (Liip in Q1 & Q2 2023 ~ $ 15)
+
+<footer>
+
+<small>In theory you can have a request that costs (~ $ 1)</small>
+
+</footer>
+
+--s--
+
+## Models
+
+- **GPT-3.5-turbo** <br>fast & not so smart <small>(it's cheap for API use)</small>
+- **GPT-3.5-turbo-16k** <br>many tokens for context & fast & not so smart <br><small>(it's cheap for API use)</small>
+- **GPT-4** <br>slow & smarter <small>(it's expensive for API use)</small>
+
+<footer>
+
+Reference: [OpenAI · Models](https://platform.openai.com/docs/models)
+
+</footer>
+
+--s--
+
+## Rule of thumb
+
+> _GPT-3.5_ is good enough for _common tasks_  
+> Use _GPT-4_ for more _complex tasks_ (like writing code)
 
 --s--
 
@@ -492,9 +616,7 @@ fetch("https://api.openai.com/v1/...", {
 
 ### Example
 
-```txt
-A Hello-World in Perl is:
-```
+<mark class="mark--secondary">A hello world in Perl is:</mark><mark><br>#!/usr/bin/perl<br>print "Hello World\n";</mark>
 
 - **pro**: Very simple to parse answer
 - **con**: Sometimes hard to request
@@ -506,22 +628,22 @@ A Hello-World in Perl is:
 <div style="font-size: 0.55em">
 
 ```js
-const body = {
-  model: "gpt-3.5-turbo", // model-name
-  // temperature: 0, // to have no randomnes
-  messages: [
-    {
-      role: "system",
-      content: `You are ChatGPT, a large language model trained by OpenAI.
-      Answer as concisely as possible. Knowledge cutoff: 2021-09-01.
-      Current date: 2023-05-04`,
-    },
-    {
-      role: "user",
-      content: "Write me a Hello-World in Perl.",
-    },
-  ],
-};
+[
+  {
+    role: "system",
+    content: `You are ChatGPT, a large language model trained by OpenAI.
+    Answer as concisely as possible. Knowledge cutoff: 2021-09-01.
+    Current date: 2023-09-12`,
+  },
+  {
+    role: "user",
+    content: "Write me a hello world in Perl.",
+  },
+  {
+    role: "assistant",
+    content: "Certainly! Here's a hello world program in Perl: …",
+  },
+];
 ```
 
 </div>
@@ -531,35 +653,90 @@ const body = {
 
 --s--
 
-## Tokens
+## Completion · _instructions_
 
-- Tokens are the _smallest unit_ of text
-- Tokens are _not words_
-- Each model has a different _token size limits_
+<mark class="mark--secondary">Write a hello world in JavaScript</mark>
 
-<br>
+<mark>Welcome to my first article in this series on JavaScript. I'm going to show you how to create a hello world application in JavaScript.</mark>
 
-### Example
+<footer>
 
-`gpt-3.5-turbo` can process _4096 tokens_. If you have more than 4096 tokens, you need to split your request into multiple requests.
+Model: `text-ada-001` (June 2023)
+
+</footer>
+--s--
+
+## Completion · _instructions_
+
+<mark class="mark--secondary">Q: Write a hello world in JavaScript.<br>A:</mark><mark> console.log('Hello World!');</mark>
+
+<footer>
+
+Model: `text-davinci-003` (June 2023)
+
+</footer>
 
 --s--
 
-## GPT-3.5 vs GPT-4
+## Zero-shot learning
 
-- GPT-3.5 → _fast_ & **not so smart** <small>(it's cheap for API use)</small>
-- GPT-4 → _slow_ & **smarter** <small>(it's expensive for API use)</small>
+<mark class="mark--secondary">Translate English to German:<br>chees →</mark><mark> Käse</mark>
 
-<br>
+<footer>
 
-### Rule of thumb
+Model: `text-davinci-003` (June 2023)
 
-> _GPT-3.5_ is good enough for _common tasks_  
-> Use _GPT-4 for developing_ and if you need many tokens
+</footer>
 
 --s--
 
-## Use it for client-work
+## Zero-shot learning
+
+<mark class="mark--secondary">Translate English to German:<br>chees →</mark><mark><br>permissions →</mark>
+
+<footer>
+
+Model: `text-ada-001` (June 2023)
+
+</footer>
+
+--s--
+
+## One-shot learning
+
+<mark class="mark--secondary">Translate English to German:<br>table → Tisch<br>chees →</mark><mark> Käse</mark>
+
+<footer>
+
+Model: `text-davinci-003` & `text-ada-001` (June 2023)
+
+</footer>
+
+--s--
+
+## Few-shot learning
+
+<mark class="mark--secondary">Translate English to German:<br>table → Tisch<br>to run → laufen<br>capitalism → Kapitalismus<br>chees →</mark><mark> Käse</mark>
+
+<footer>
+
+Model: `text-davinci-003` & `text-ada-001` (June 2023)
+
+</footer>
+--s--
+
+```fm
+style: negative
+background: true
+```
+
+## And now what?
+
+# Use it for _client-work_
+
+--s--
+
+## CMS
 
 ### Example CMS-Helper to write Blog-Post
 
@@ -625,7 +802,7 @@ post: "{{user input}}".
 ## Prompt injection
 
 ```txt
-{{instruction (secret)}}
+Your (secret) instruction here.
 {{user input}}
 ```
 
@@ -666,13 +843,7 @@ background: true
 
 ## Vector Example in 2D
 
-![](https://www.mathsisfun.com/algebra/images/vector-mag-dir.svg)
-
-<footer>
-
-Source: [MathsIsFun.com](https://www.mathsisfun.com/algebra/vectors.html)
-
-</footer>
+![](./img/vector.png)
 
 --s--
 
@@ -897,17 +1068,65 @@ background: true
 
 --s--
 
-## FAQ search
+## Embeddings search
 
-- User [`steueramt im kanton basel-stadt öffnungszeiten`](https://www.google.com/search?q=steueramt+im+kanton+basel-stadt+%C3%B6ffnungszeiten) (tax office in the canton of basel-city opening hours)
+> steueramt im kanton basel-stadt öffnungszeiten <br>
+> (tax office in the canton of basel-city opening hours)
+
+- [Google](https://www.google.com/search?q=steueramt+im+kanton+basel-stadt+%C3%B6ffnungszeiten)
+- [bs.ch](https://www.steuerverwaltung.bs.ch/kontakt.html?navopen=search&search=%C3%B6ffnungszeiten+des+steueramt)
+- [Proof of Concept](https://basel.search.srv.signalwerk.ch/?q=steueramt%20im%20kanton%20basel-stadt%20%C3%B6ffnungszeiten) with OpenAI
 - _Find_ with vector the _rigth document_
 - _Answer_ with `ChatGPT` the _Queston_ and _give a Link_ to the document
 
 --s--
 
-## Projects inside Liip
+```fm
+style: negative
+background: true
+```
 
-See [Currated list by Tonio](https://docs.google.com/spreadsheets/u/1/d/1jMtrm3qiW-SWCvdC9GV0xTGmlDd8eR_vWXOMTLBsOhg/edit#gid=0)
+## There's more …
+
+# _Open Source_ <br>alternatives for LLMs
+
+--s--
+
+# The problems
+
+- On _«normal» hardware_ you can rund <br>max. ~ 13 B models
+- The Models are most of the time in _english_
+- _Slowish_
+- _80 %_ of a GPT-4 is a _huge difference_
+- $ 10k+ GPU can run the bigger models
+- You can run it in datacenters ($ ~30/h)
+
+--s--
+
+## Good Models
+
+- [Llama2 70B ](https://huggingface.co/spaces/ysharma/Explore_llamav2_with_TGI)
+- [Falcon 180B](https://huggingface.co/blog/falcon)
+- …
+
+--s--
+
+```fm
+style: negative
+background: true
+```
+
+## Run it locally
+
+# Try _it!_
+
+--s--
+
+## Fast Chat
+
+- Simple instructions [FastChat](https://github.com/lm-sys/FastChat)
+- Test different LLMs quickly
+- Offers _OpenAI compatible API_
 
 --s--
 
@@ -919,6 +1138,12 @@ background: true
 ## thats it
 
 # alll riiighht...
+
+--s--
+
+## Projects inside Liip
+
+See [Currated list by Tonio](https://docs.google.com/spreadsheets/u/1/d/1jMtrm3qiW-SWCvdC9GV0xTGmlDd8eR_vWXOMTLBsOhg/edit#gid=0)
 
 --s--
 
@@ -938,7 +1163,6 @@ background: true
 ## Whats next?
 
 - Join `#ai-exchange` channel
-- New ChatGPT models for data-sets
 - ChatGPT plugins
 - Fine-tuning of models based on your data
 - [AutoGPT](https://github.com/Significant-Gravitas/Auto-GPT)
