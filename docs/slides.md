@@ -148,7 +148,8 @@ Source: [OpenAI: Limitations & risks](https://platform.openai.com/docs/guides/em
 
 - ChatGPT/Copilot is **not a search engine**
 - It is _not using «live» data_ from the web
-- No more [URL requests](https://chat.openai.com/share/f33f2ee5-55f0-4582-a24e-137b6f345b84) like [before](https://chat.openai.com/share/de4f1d14-cf3b-4a48-a181-d56e7d355308)
+- No more «Web Browsing» in ChatGPT (use Bing)
+- No more [URL requests](https://chat.openai.com/share/0db27307-e6e2-4437-960d-cc222b04de25) like [before](https://chat.openai.com/share/de4f1d14-cf3b-4a48-a181-d56e7d355308)
 
 > think of it as: someone had access to the web and learned on all data but is now offline
 
@@ -178,7 +179,7 @@ Source: [OpenAI: Web Browsing in ChatGPT is disabled since July 3, 2023](https:/
 - [GitHub Copilot](https://copilot.github.com/)
 - AI pair programmer
 - _Code_ & _comments_
-- IDE integration
+- IDE integration (Exampels with VSCode)
 - _«conversation»_ and _«inline suggestions»_
 
 --s--
@@ -507,7 +508,7 @@ Source: [OpenAI · Terms of use · 3. Content · (c) Use of Content to Improve S
 - [Same API](https://azure.microsoft.com/en-us/products/cognitive-services/openai-service/) as OpenAI
 - _Models from OpenAI_ hosted by Microsoft
 - Almost the [same pricing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/) as OpenAI
-- Offers [**EU/Swiss hosting**](https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/?products=cognitive-services&regions=switzerland-north,switzerland-west,europe-north,europe-west) (Netherlands)
+- Offers [**EU/Swiss hosting**](https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/?products=cognitive-services&regions=switzerland-north,switzerland-west,europe-north,europe-west)
 - Many [ISO-Certificates](https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-iso-27001)
 
 --s--
@@ -623,36 +624,6 @@ fetch("https://api.openai.com/v1/...", {
 
 --s--
 
-## `/chat/completions`
-
-<div style="font-size: 0.55em">
-
-```js
-[
-  {
-    role: "system",
-    content: `You are ChatGPT, a large language model trained by OpenAI.
-    Answer as concisely as possible. Knowledge cutoff: 2021-09-01.
-    Current date: 2023-09-12`,
-  },
-  {
-    role: "user",
-    content: "Write me a hello world in Perl.",
-  },
-  {
-    role: "assistant",
-    content: "Certainly! Here's a hello world program in Perl: …",
-  },
-];
-```
-
-</div>
-
-- **pro**: Simple to request
-- **con**: Parsing is sometimes harder
-
---s--
-
 ## Completion · _instructions_
 
 <mark class="mark--secondary">Write a hello world in JavaScript</mark>
@@ -723,6 +694,37 @@ Model: `text-davinci-003` & `text-ada-001` (June 2023)
 Model: `text-davinci-003` & `text-ada-001` (June 2023)
 
 </footer>
+
+--s--
+
+## `/chat/completions`
+
+<div style="font-size: 0.55em">
+
+```js
+[
+  {
+    role: "system",
+    content: `You are ChatGPT, a large language model trained by OpenAI.
+    Answer as concisely as possible. Knowledge cutoff: 2021-09-01.
+    Current date: 2023-09-12`,
+  },
+  {
+    role: "user",
+    content: "Write me a hello world in Perl.",
+  },
+  {
+    role: "assistant",
+    content: "Certainly! Here's a hello world program in Perl: …",
+  },
+];
+```
+
+</div>
+
+- **pro**: Simple to request
+- **con**: Parsing is sometimes harder
+
 --s--
 
 ```fm
@@ -1064,7 +1066,7 @@ background: true
 
 - index _content_ with vectors (websites, pdf, img, ...)
 - _classify_ comments in shop (compare to `good`/`bad` vectors)
-- _FAQ_ search
+- FAQ/search/assistant
 
 --s--
 
@@ -1074,7 +1076,7 @@ background: true
 > (tax office in the canton of basel-city opening hours)
 
 - [Google](https://www.google.com/search?q=steueramt+im+kanton+basel-stadt+%C3%B6ffnungszeiten)
-- [bs.ch](https://www.steuerverwaltung.bs.ch/kontakt.html?navopen=search&search=%C3%B6ffnungszeiten+des+steueramt)
+- [bs.ch](https://www.steuerverwaltung.bs.ch/kontakt.html?navopen=search&search=steueramt+im+kanton+basel-stadt+%C3%B6ffnungszeiten)
 - [Proof of Concept](https://basel.search.srv.signalwerk.ch/?q=steueramt%20im%20kanton%20basel-stadt%20%C3%B6ffnungszeiten) with OpenAI
 - _Find_ with vector the _rigth document_
 - _Answer_ with `ChatGPT` the _Queston_ and _give a Link_ to the document
