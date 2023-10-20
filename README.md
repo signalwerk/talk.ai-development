@@ -6,7 +6,7 @@ This talk was held as a training for developers working at Liip AG.
 
 ## Events
 
-- September 12 2023, 2 h, T2
+- September 12 2023, 2 h, [Version `LiipTraining02`](https://github.com/signalwerk/talk.ai-development/tree/LiipTraining02)
 - May 4 2023, 2 h, [Version `LiipTraining01`](https://github.com/signalwerk/talk.ai-development/tree/LiipTraining01)
 
 ---
